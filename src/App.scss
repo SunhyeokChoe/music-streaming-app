@@ -1,6 +1,9 @@
 // sidebar 컬러
 $greyDark: #040404;
 
+// sidebar 텍스트 컬러
+$greyText: #b3b3b3;
+
 // body 컬러
 $greyLight: #131313;
 
@@ -10,25 +13,69 @@ $greyLighter: #282828;
 // footer 컬러
 $musicControlsHeight: 90px;
 
+// header nav 컬러
+$greyNav: #090909;
+
 // footer를 제외한 sidebar & body
 .App {
+  display: flex;
+
   height: calc(100vh - #{$musicControlsHeight});
   background: $greyLight;
 }
 
 // 사이드바
 .navBar {
-  width: 250px;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  width: 228px;
+  height: calc(100% - 10px);
   background: $greyDark;
-  
+  padding: 10px;
+
   .logo {
-    padding: 2rem;
+    padding: 1rem 0.8rem;
+    max-width: 150px;
 
     svg {
       path {
         fill: white;
       }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      color: $greyText;
+      list-style-type: none;
+      border-radius: 5px;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+
+      &.active {
+        background: $greyLighter;
+      }
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .cookies {
+    font-size: 0.6rem;
+    color: $greyText;
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
+
+    span {
+      display: block;
     }
   }
 }
@@ -37,7 +84,7 @@ $musicControlsHeight: 90px;
   background: grey;
   height: 100vh;
   min-height: 100%;
-};
+}
 
 .musicControls {
   background: $greyLighter;
@@ -47,4 +94,61 @@ $musicControlsHeight: 90px;
   align-items: center;
   justify-content: center;
   color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.upperNav {
+  display: flex;
+  color: white;
+  align-items: center;
+
+  background: $greyNav;
+  width: 100%;
+  height: 56px;
+  padding: 0.5rem 2rem;
+}
+
+.main {
+  width: 100%;
+
+  .mainContent {
+    color: white;
+    padding: 0.5rem 2rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.cardWrap {
+  .card {
+    background: $greyLighter;
+    border-radius: 10px;
+    width: 200px;
+    overflow: hidden;
+    padding: 1.2rem;
+
+    .cardImage {
+      height: 160px;
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3),
+        0 1px 2px 0 rgba(0, 0, 0, 0.2);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .cardContent {
+      padding: 0.4rem 0;
+
+      h3 {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+    }
+  }
 }
