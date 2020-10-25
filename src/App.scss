@@ -1,0 +1,50 @@
+// sidebar 컬러
+$greyDark: #040404;
+
+// body 컬러
+$greyLight: #131313;
+
+// body 위의 카드 컴포넌트 컬러
+$greyLighter: #282828;
+
+// footer 컬러
+$musicControlsHeight: 90px;
+
+// footer를 제외한 sidebar & body
+.App {
+  height: calc(100vh - #{$musicControlsHeight});
+  background: $greyLight;
+}
+
+// 사이드바
+.navBar {
+  width: 250px;
+  height: 100%;
+  background: $greyDark;
+  
+  .logo {
+    padding: 2rem;
+
+    svg {
+      path {
+        fill: white;
+      }
+    }
+  }
+}
+
+.outerWrap {
+  background: grey;
+  height: 100vh;
+  min-height: 100%;
+};
+
+.musicControls {
+  background: $greyLighter;
+  text-align: center;
+  height: $musicControlsHeight;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
